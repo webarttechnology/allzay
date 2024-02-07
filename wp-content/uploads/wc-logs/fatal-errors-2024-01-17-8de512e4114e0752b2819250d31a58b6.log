@@ -1,0 +1,134 @@
+2024-01-17T11:05:33+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function get_the_terms(), 1 passed in /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-content/themes/Oceanworldtheme/functions.php on line 1007 and exactly 2 expected in /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/category-template.php:1288
+Stack trace:
+#0 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-content/themes/Oceanworldtheme/functions.php(1007): get_the_terms()
+#1 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/class-wp-hook.php(324): dev_designs_show_sku()
+#2 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters()
+#3 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/plugin.php(517): WP_Hook->do_action()
+#4 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-content/themes/Oceanworldtheme/woocommerce/content-single-product.php(60): do_action()
+#5 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/template.php(792): require('/home/u78107848...')
+#6 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template()
+#7 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-content/themes/Oceanworldtheme/woocommerce/single-product.php(71): wc_get_template_part()
+#8 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/template-loader.php(106): include('/home/u78107848...')
+#9 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-blog-header.php(19): require_once('/home/u78107848...')
+#10 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/index.php(17): require('/home/u78107848...')
+#11 {main}
+  thrown in /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/category-template.php on line 1288
+
+2024-01-17T11:05:43+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function get_the_terms(), 1 passed in /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-content/themes/Oceanworldtheme/functions.php on line 1007 and exactly 2 expected in /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/category-template.php:1288
+Stack trace:
+#0 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-content/themes/Oceanworldtheme/functions.php(1007): get_the_terms()
+#1 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/class-wp-hook.php(324): dev_designs_show_sku()
+#2 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters()
+#3 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/plugin.php(517): WP_Hook->do_action()
+#4 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-content/themes/Oceanworldtheme/woocommerce/content-single-product.php(60): do_action()
+#5 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/template.php(792): require('/home/u78107848...')
+#6 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template()
+#7 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-content/themes/Oceanworldtheme/woocommerce/single-product.php(71): wc_get_template_part()
+#8 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/template-loader.php(106): include('/home/u78107848...')
+#9 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-blog-header.php(19): require_once('/home/u78107848...')
+#10 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/index.php(17): require('/home/u78107848...')
+#11 {main}
+  thrown in /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/category-template.php on line 1288
+
+2024-01-17T11:07:06+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function get_the_terms(), 1 passed in /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-content/themes/Oceanworldtheme/functions.php on line 1007 and exactly 2 expected in /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/category-template.php:1288
+Stack trace:
+#0 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-content/themes/Oceanworldtheme/functions.php(1007): get_the_terms()
+#1 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/class-wp-hook.php(324): dev_designs_show_sku()
+#2 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters()
+#3 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/plugin.php(517): WP_Hook->do_action()
+#4 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-content/themes/Oceanworldtheme/woocommerce/content-single-product.php(60): do_action()
+#5 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/template.php(792): require('/home/u78107848...')
+#6 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template()
+#7 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-content/themes/Oceanworldtheme/woocommerce/single-product.php(71): wc_get_template_part()
+#8 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/template-loader.php(106): include('/home/u78107848...')
+#9 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-blog-header.php(19): require_once('/home/u78107848...')
+#10 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/index.php(17): require('/home/u78107848...')
+#11 {main}
+  thrown in /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/category-template.php on line 1288
+
+2024-01-17T11:07:10+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function get_the_terms(), 1 passed in /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-content/themes/Oceanworldtheme/functions.php on line 1007 and exactly 2 expected in /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/category-template.php:1288
+Stack trace:
+#0 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-content/themes/Oceanworldtheme/functions.php(1007): get_the_terms()
+#1 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/class-wp-hook.php(324): dev_designs_show_sku()
+#2 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters()
+#3 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/plugin.php(517): WP_Hook->do_action()
+#4 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-content/themes/Oceanworldtheme/woocommerce/content-single-product.php(60): do_action()
+#5 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/template.php(792): require('/home/u78107848...')
+#6 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template()
+#7 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-content/themes/Oceanworldtheme/woocommerce/single-product.php(71): wc_get_template_part()
+#8 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/template-loader.php(106): include('/home/u78107848...')
+#9 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-blog-header.php(19): require_once('/home/u78107848...')
+#10 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/index.php(17): require('/home/u78107848...')
+#11 {main}
+  thrown in /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/category-template.php on line 1288
+
+2024-01-17T11:07:14+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function get_the_terms(), 1 passed in /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-content/themes/Oceanworldtheme/functions.php on line 1007 and exactly 2 expected in /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/category-template.php:1288
+Stack trace:
+#0 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-content/themes/Oceanworldtheme/functions.php(1007): get_the_terms()
+#1 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/class-wp-hook.php(324): dev_designs_show_sku()
+#2 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters()
+#3 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/plugin.php(517): WP_Hook->do_action()
+#4 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-content/themes/Oceanworldtheme/woocommerce/content-single-product.php(60): do_action()
+#5 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/template.php(792): require('/home/u78107848...')
+#6 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template()
+#7 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-content/themes/Oceanworldtheme/woocommerce/single-product.php(71): wc_get_template_part()
+#8 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/template-loader.php(106): include('/home/u78107848...')
+#9 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-blog-header.php(19): require_once('/home/u78107848...')
+#10 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/index.php(17): require('/home/u78107848...')
+#11 {main}
+  thrown in /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/category-template.php on line 1288
+
+2024-01-17T11:07:27+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function get_the_terms(), 1 passed in /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-content/themes/Oceanworldtheme/functions.php on line 1007 and exactly 2 expected in /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/category-template.php:1288
+Stack trace:
+#0 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-content/themes/Oceanworldtheme/functions.php(1007): get_the_terms()
+#1 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/class-wp-hook.php(324): dev_designs_show_sku()
+#2 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters()
+#3 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/plugin.php(517): WP_Hook->do_action()
+#4 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-content/themes/Oceanworldtheme/woocommerce/content-single-product.php(60): do_action()
+#5 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/template.php(792): require('/home/u78107848...')
+#6 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template()
+#7 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-content/themes/Oceanworldtheme/woocommerce/single-product.php(71): wc_get_template_part()
+#8 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/template-loader.php(106): include('/home/u78107848...')
+#9 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-blog-header.php(19): require_once('/home/u78107848...')
+#10 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/index.php(17): require('/home/u78107848...')
+#11 {main}
+  thrown in /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/category-template.php on line 1288
+
+2024-01-17T11:07:34+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function get_the_terms(), 1 passed in /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-content/themes/Oceanworldtheme/functions.php on line 1007 and exactly 2 expected in /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/category-template.php:1288
+Stack trace:
+#0 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-content/themes/Oceanworldtheme/functions.php(1007): get_the_terms()
+#1 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/class-wp-hook.php(324): dev_designs_show_sku()
+#2 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters()
+#3 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/plugin.php(517): WP_Hook->do_action()
+#4 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-content/themes/Oceanworldtheme/woocommerce/content-single-product.php(60): do_action()
+#5 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/template.php(792): require('/home/u78107848...')
+#6 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template()
+#7 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-content/themes/Oceanworldtheme/woocommerce/single-product.php(71): wc_get_template_part()
+#8 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/template-loader.php(106): include('/home/u78107848...')
+#9 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-blog-header.php(19): require_once('/home/u78107848...')
+#10 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/index.php(17): require('/home/u78107848...')
+#11 {main}
+  thrown in /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/category-template.php on line 1288
+
+2024-01-17T11:08:42+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function get_the_terms(), 1 passed in /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-content/themes/Oceanworldtheme/functions.php on line 1007 and exactly 2 expected in /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/category-template.php:1288
+Stack trace:
+#0 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-content/themes/Oceanworldtheme/functions.php(1007): get_the_terms()
+#1 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/class-wp-hook.php(324): dev_designs_show_sku()
+#2 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters()
+#3 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/plugin.php(517): WP_Hook->do_action()
+#4 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-content/themes/Oceanworldtheme/woocommerce/content-single-product.php(60): do_action()
+#5 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/template.php(792): require('/home/u78107848...')
+#6 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template()
+#7 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-content/themes/Oceanworldtheme/woocommerce/single-product.php(71): wc_get_template_part()
+#8 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/template-loader.php(106): include('/home/u78107848...')
+#9 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-blog-header.php(19): require_once('/home/u78107848...')
+#10 /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/index.php(17): require('/home/u78107848...')
+#11 {main}
+  thrown in /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-includes/category-template.php on line 1288
+
+2024-01-17T11:45:04+00:00 CRITICAL syntax error, unexpected token "." in /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-content/themes/Oceanworldtheme/functions.php on line 1027
+
+2024-01-17T11:46:17+00:00 CRITICAL syntax error, unexpected token "." in /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-content/themes/Oceanworldtheme/functions.php on line 1027
+
+2024-01-17T11:46:23+00:00 CRITICAL syntax error, unexpected token "." in /home/u781078481/domains/dwstaging.link/public_html/cms/ocean-world/wp-content/themes/Oceanworldtheme/functions.php on line 1027
+

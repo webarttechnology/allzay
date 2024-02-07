@@ -1,0 +1,8 @@
+2024-01-24T11:16:01+00:00 CRITICAL Uncaught Error: Object of class WP_Error could not be converted to string in C:\xampp\htdocs\allzaynew\wp-content\themes\allzay\page-templates\index.php:274
+Stack trace:
+#0 C:\xampp\htdocs\allzaynew\wp-includes\template-loader.php(106): include()
+#1 C:\xampp\htdocs\allzaynew\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\allzaynew\index.php(17): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\allzaynew\wp-content\themes\allzay\page-templates\index.php on line 274
+

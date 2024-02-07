@@ -1,0 +1,27 @@
+2024-01-09T07:01:45+00:00 CRITICAL Uncaught Error: Call to undefined function twenty_twenty_one_post_thumbnail() in C:\xampp\htdocs\Oceanworld\wp-content\themes\Oceanworldtheme\template-parts\header\excerpt-header.php:20
+Stack trace:
+#0 C:\xampp\htdocs\Oceanworld\wp-includes\template.php(792): require()
+#1 C:\xampp\htdocs\Oceanworld\wp-includes\template.php(725): load_template('C:\\xampp\\htdocs...', false, Array)
+#2 C:\xampp\htdocs\Oceanworld\wp-includes\general-template.php(206): locate_template(Array, true, false, Array)
+#3 C:\xampp\htdocs\Oceanworld\wp-content\themes\Oceanworldtheme\template-parts\content\content-excerpt.php(16): get_template_part('template-parts/...', '')
+#4 C:\xampp\htdocs\Oceanworld\wp-includes\template.php(792): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Oceanworld\wp-includes\template.php(725): load_template('C:\\xampp\\htdocs...', false, Array)
+#6 C:\xampp\htdocs\Oceanworld\wp-includes\general-template.php(206): locate_template(Array, true, false, Array)
+#7 C:\xampp\htdocs\Oceanworld\wp-content\themes\Oceanworldtheme\index.php(32): get_template_part('template-parts/...', 'excerpt')
+#8 C:\xampp\htdocs\Oceanworld\wp-includes\template-loader.php(106): include('C:\\xampp\\htdocs...')
+#9 C:\xampp\htdocs\Oceanworld\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#10 C:\xampp\htdocs\Oceanworld\index.php(17): require('C:\\xampp\\htdocs...')
+#11 {main}
+  thrown in C:\xampp\htdocs\Oceanworld\wp-content\themes\Oceanworldtheme\template-parts\header\excerpt-header.php on line 20
+
+2024-01-09T10:38:31+00:00 CRITICAL Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "prefix_create_ourworks" not found or invalid function name in C:\xampp\htdocs\Oceanworld\wp-includes\class-wp-hook.php:324
+Stack trace:
+#0 C:\xampp\htdocs\Oceanworld\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#1 C:\xampp\htdocs\Oceanworld\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#2 C:\xampp\htdocs\Oceanworld\wp-settings.php(643): do_action('init')
+#3 C:\xampp\htdocs\Oceanworld\wp-config.php(96): require_once('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Oceanworld\wp-load.php(50): require_once('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\Oceanworld\wp-admin\admin-ajax.php(22): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+  thrown in C:\xampp\htdocs\Oceanworld\wp-includes\class-wp-hook.php on line 324
+
