@@ -930,7 +930,9 @@ header.style-2 .nav-right::after { display: none; }
 .product-card .product-card-content { padding-top: 25px; padding-bottom: 10px; text-align: center; }
 .product-card .product-card-content h6 { margin-bottom: 5px; }
 .product-card .product-card-content h6 a { color: var(--text-color); font-size: 20px; font-family: var(--font-Jost); font-weight: 500; letter-spacing: .4px; text-transform: capitalize; margin-bottom: 5px; line-height: 1; }
-.product-card .product-card-content p { margin-bottom: 20px; }
+.product-card .product-card-content p {
+    margin-bottom: 5px;
+}
 .product-card .product-card-content p a { color: #878585; text-align: center; font-size: 15px; font-family: var(--font-Jost); letter-spacing: .3px; text-transform: uppercase; transition: .5s; }
 .product-card .product-card-content p a:hover { color: var(--text-color); }
 .product-card .product-card-content .price { color: var(--text-color); font-size: 20px; font-family: var(--font-Jost); font-weight: 600; margin-bottom: 5px; }
@@ -3516,9 +3518,9 @@ header.style-2 .nav-right::after { display: none; }
     padding-left: 40px;
 }
 /* ria */
-.cartdiv strong{
-color: var(--primary-color2);
-font-size: 10px;
+.cartdiv strong {
+        color: var(--primary-color3);
+    font-size: 13px;
 }
 .yith-wcwl-add-button i {
     color: #fff;
@@ -3700,5 +3702,19 @@ font-size: 10px;
 .makeup-section  .product_meta{
 	margin-bottom:1rem;
 }
-
+.accordion-header button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 1.25rem;
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+    border: 0;
+    border-radius: 0;
+    overflow-anchor: none;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,border-radius .15s ease;
+}
 
