@@ -196,17 +196,18 @@ class Front {
 		$query                       = apply_filters( 'fkcart_admin_ajax_args', [] );
 		$is_ajax_add_to_cart_enabled = wc_string_to_bool( Data::get_value( 'ajax_add_to_cart' ) ) && is_product() && ! self::is_excluded_product_types() ? 'yes' : 'no';
 		$arr                         = [
-			'ajax_nonce'        => wp_create_nonce( 'fkcart' ),
-			'is_preview'        => fkcart_is_preview(),
-			'ajax_url'          => ! empty( $query ) ? add_query_arg( $query, $ajax_url ) : $ajax_url,
-			'force_open_cart'   => 'no',
-			'open_side_cart'    => $this->add_to_cart_trigger ? 'yes' : 'no',
-			'should_open_cart'  => 'yes',
-			'is_cart'           => is_cart(),
-			'is_shop'           => is_shop(),
-			'is_single_product' => is_product(),
-			'ajax_add_to_cart'  => apply_filters( 'fkcart_is_ajax_add_to_cart_enabled', $is_ajax_add_to_cart_enabled, $this ),
-			'wc_endpoints'      => AJAX::get_public_endpoints( $query ),
+			'ajax_nonce'                 => wp_create_nonce( 'fkcart' ),
+			'is_preview'                 => fkcart_is_preview(),
+			'ajax_url'                   => ! empty( $query ) ? add_query_arg( $query, $ajax_url ) : $ajax_url,
+			'force_open_cart'            => 'no',
+			'open_side_cart'             => $this->add_to_cart_trigger ? 'yes' : 'no',
+			'should_open_cart'           => 'yes',
+			'is_cart'                    => is_cart(),
+			'is_shop'                    => is_shop(),
+			'is_single_product'          => is_product(),
+			'need_extra_slide_cart_ajax' => Data::need_re_run_get_slide_cart_ajax()?'yes':'no',
+			'ajax_add_to_cart'           => apply_filters( 'fkcart_is_ajax_add_to_cart_enabled', $is_ajax_add_to_cart_enabled, $this ),
+			'wc_endpoints'               => AJAX::get_public_endpoints( $query ),
 		];
 		$auto_open_cart              = Data::get_value( 'enable_auto_open_cart' );
 		if ( 0 === intval( $auto_open_cart ) || false === $auto_open_cart || 'false' === strval( $auto_open_cart ) ) {
@@ -216,6 +217,7 @@ class Front {
 		if ( true === $this->add_to_cart_trigger ) {
 			$arr['force_open_cart'] = 'yes';
 		}
+		$arr['cookie_names'] = Data::fkcart_frontend_cookie_names();
 
 		return $arr;
 	}
@@ -367,6 +369,7 @@ class Front {
 		), $_product, false );
 		$product_quantity_input = apply_filters( 'woocommerce_cart_item_quantity', $product_quantity_input, $cart_item_key, $cart_item );
 		$product_quantity_input = is_numeric( $product_quantity_input ) && $product_quantity_input;
+		$is_child_product       = apply_filters( 'fkcart_is_child_item', false, $cart_item );
 
 		return [
 			'_fkcart_variation_gift' => isset( $cart_item['_fkcart_variation_gift'] ),
@@ -380,8 +383,10 @@ class Front {
 			'thumbnail'              => $thumbnail,
 			'price'                  => $product_subtotal,
 			'quantity'               => $cart_item['quantity'],
-			'_fkcart_free_gift'      => apply_filters( 'fkcart_item_hide_delete_icon', isset( $cart_item['_fkcart_free_gift'] ) || empty( $product_delete_icon ), $cart_item ),
-			'sold_individually'      => apply_filters( 'fkcart_cart_item_is_sold_individually', $_product->is_sold_individually() || $product_quantity_input || ! ( $raw_subtotal > 0 ), $cart_item ),
+			'is_child_item'          => $is_child_product,
+			'hide_you_saved_text'    => apply_filters( 'fkcart_item_hide_you_saved_text', false, $cart_item ),
+			'_fkcart_free_gift'      => apply_filters( 'fkcart_item_hide_delete_icon', isset( $cart_item['_fkcart_free_gift'] ) || empty( $product_delete_icon ) || $is_child_product, $cart_item ),
+			'sold_individually'      => apply_filters( 'fkcart_cart_item_is_sold_individually', $_product->is_sold_individually() || $product_quantity_input || ! ( $raw_subtotal > 0 ) || $is_child_product, $cart_item ),
 			'product_meta'           => $product_meta
 		];
 	}
@@ -444,8 +449,11 @@ class Front {
 
 			return ( false === $raw ) ? wc_price( $price ) : $price;
 		}
+		$price = 0;
 
-		$price = ( WC()->cart->display_prices_including_tax() ) ? WC()->cart->get_subtotal() + WC()->cart->get_subtotal_tax() : WC()->cart->get_subtotal();
+		if ( ! is_null( WC()->cart ) ) {
+			$price = ( WC()->cart->display_prices_including_tax() ) ? WC()->cart->get_subtotal() + WC()->cart->get_subtotal_tax() : WC()->cart->get_subtotal();
+		}
 
 		return ( false === $raw ) ? wc_price( $price ) : $price;
 	}
@@ -557,7 +565,11 @@ class Front {
 		$percentage            = '';
 		$amount                = 0;
 		$tax_display_mode      = get_option( 'woocommerce_tax_display_shop' );
-		$product_regular_price = 'incl' === $tax_display_mode ? wc_get_price_including_tax( $product, [ 'price' => $product->get_regular_price( 'edit' ) ] ) : wc_get_price_excluding_tax( $product, [ 'price' => $product->get_regular_price( 'edit' ) ] );
+
+		$wc_product_regular_price = apply_filters( 'fkcart_wc_you_saved_price', $product->get_regular_price( 'edit' ), $product );
+
+
+		$product_regular_price = 'incl' === $tax_display_mode ? wc_get_price_including_tax( $product, [ 'price' => $wc_product_regular_price ] ) : wc_get_price_excluding_tax( $product, [ 'price' => $wc_product_regular_price ] );
 		$product_price         = 'incl' === $tax_display_mode ? wc_get_price_including_tax( $product, [ 'price' => $product->get_price( 'edit' ) ] ) : wc_get_price_excluding_tax( $product, [ 'price' => $product->get_price( 'edit' ) ] );
 
 		if ( $product_regular_price > 0 && ! empty( $product_price ) && $product_price != $product_regular_price ) {
@@ -591,11 +603,8 @@ class Front {
 	 */
 	public function add_to_cart_trigger() {
 		$this->add_to_cart_trigger = true;
+		Ajax::get_instance()->set_fkcart_cookies();
 
-		$is_ajax_add_to_cart_enabled = wc_string_to_bool( Data::get_value( 'ajax_add_to_cart' ) );
-		if ( false === $is_ajax_add_to_cart_enabled ) {
-			Ajax::get_instance()->set_fkcart_cookies();
-		}
 	}
 
 	/**
@@ -666,6 +675,18 @@ class Front {
 		if ( empty( $saved_menu ) ) {
 			return $menu_items;
 		}
+
+		/**
+		 * check if $args->menu is menu slug instead of Term Object then convert slug  to Term Object
+		 */
+		if ( is_string( $args->menu ) ) {
+			$menu_object = get_term_by( 'slug', $args->menu, 'nav_menu' );
+			if ( $menu_object instanceof \WP_Term ) {
+				$args->menu = $menu_object;
+				unset( $menu_object );
+			}
+		}
+
 		$current_menu_id = ( $args->menu instanceof \WP_Term ) ? $args->menu->term_id : ( is_numeric( $args->menu ) ? $args->menu : false );
 		if ( false === $current_menu_id || intval( $current_menu_id ) !== intval( $saved_menu ) ) {
 			return $menu_items;

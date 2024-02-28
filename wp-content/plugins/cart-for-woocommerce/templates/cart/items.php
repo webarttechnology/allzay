@@ -2,11 +2,12 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-$front                = \FKCart\Includes\Front::get_instance();
+$front = \FKCart\Includes\Front::get_instance();
+do_action( 'fkcart_before_cart_items', $front );
 $cart_contents        = $front->get_items();
 $is_you_saved_enabled = \FKCart\Includes\Data::is_you_saved_enabled();
 
-do_action( 'fkcart_before_cart_items', $front );
+
 ?>
     <div class="fkcart-item-wrap fkcart-pt-16">
 		<?php

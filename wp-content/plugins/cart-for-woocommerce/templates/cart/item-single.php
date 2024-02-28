@@ -19,7 +19,7 @@ $_product             = $cart_item['product'];
 			<?php do_action( 'fkcart_before_item_meta', $cart_item ); ?>
             <div class="fkcart-item-meta-content"><?php echo wp_kses_post( $cart_item['product_meta'] ) ?></div>
 			<?php
-			if ( fkcart_is_variation_product_type( $_product->get_type() ) && ! $cart_item['_fkcart_variation_gift'] ) {
+			if ( fkcart_is_variation_product_type( $_product->get_type() ) && ! $cart_item['_fkcart_variation_gift'] && false === $cart_item['is_child_item'] ) {
 				$select_options_label = apply_filters( 'fkcart_select_options_label', __( 'Select options', 'woocommerce' ) );
 				?>
                 <div class="fkcart-item-meta-content">
@@ -49,7 +49,7 @@ $_product             = $cart_item['product'];
 				echo '</div>';
 			}
 			do_action( 'fkcart_after_item_quantity', $cart_item );
-			if ( false == $cart_item['_fkcart_free_gift'] ) {
+			if ( false === $cart_item['_fkcart_free_gift'] ) {
 				?>
                 <div class="fkcart-remove-item" data-key="<?php esc_attr_e( $cart_item_key ) ?>">
 					<?php fkcart_get_template_part( 'icon/close', '', [ 'width' => 10, 'height' => 10 ] ); ?>
@@ -63,7 +63,8 @@ $_product             = $cart_item['product'];
 			<?php echo wp_kses_post( $cart_item['price'] ) ?>
         </div>
 		<?php
-		if ( $is_you_saved_enabled ) {
+
+		if ( $is_you_saved_enabled && false === $cart_item['hide_you_saved_text'] ) {
 			$you_save = $front->you_saved_price( $_product, $cart_item['quantity'] );
 			if ( is_array( $you_save ) && ! empty( $you_save['percentage'] ) ) {
 				$amount = $you_save['amount'];

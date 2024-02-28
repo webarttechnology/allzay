@@ -224,13 +224,13 @@ class Admin_App {
 						'name' => 'Store Checkout',
 						'link' => admin_url( 'admin.php?page=bwf&path=/store-checkout' ),
 					],
+					'analytics'      => [
+						'name' => __( 'Analytics', 'funnel-builder' ),
+						'link' => admin_url( 'admin.php?page=bwf&path=/analytics' ),
+					],
 					'templates'      => [
 						'name' => 'Templates',
 						'link' => admin_url( 'admin.php?page=bwf&path=/templates' ),
-					],
-					'settings'       => [
-						'name' => 'Settings',
-						'link' => admin_url( 'admin.php?page=bwf&path=/settings' ),
 					],
 					'automations'    => [
 						'name' => 'Automations',
@@ -246,7 +246,23 @@ class Admin_App {
 						'link' => admin_url( 'admin.php?page=fkcart' ),
 					]
 				],
-				'right_nav' => [],
+				'right_nav' => [
+					'settings'    => [
+						'name'   => __( 'Settings', 'funnel-builder' ),
+						'icon'   => 'settings',
+						'link'   => admin_url( 'admin.php?page=bwf&path=/settings' ),
+						'desc'   => '',
+						'target' => '_blank'
+					],
+					'setup'    => [
+						'name'   => __( 'Setup & Help', 'funnel-builder' ),
+						'icon'   => 'help-circle',
+						'link'   => admin_url( 'admin.php?page=bwf&path=/setup' ),
+						'desc'   => '',
+						'target' => '_blank'
+					],
+	
+				],
 				'data'      => [
 					'back_link'                            => '',
 					'level_1_navigation_active'            => '',
@@ -342,8 +358,24 @@ class Admin_App {
 		<?php
 
 		/** Make admin footer blank */
-		add_filter( 'admin_footer_text', '__return_empty_string', PHP_INT_MAX );
-		add_filter( 'update_footer', '__return_empty_string', PHP_INT_MAX );
+		add_filter( 'admin_footer_text', [ $this, 'hide_admin_footer_on_cart' ], PHP_INT_MAX );
+		add_filter( 'update_footer', [ $this, 'hide_admin_footer_on_cart' ], PHP_INT_MAX );
+	}
+
+	/**
+	 * Hide admin footer on cart
+	 *
+	 * @param $str
+	 *
+	 * @return string
+	 */
+	public function hide_admin_footer_on_cart( $str ) {
+		$page = filter_input( INPUT_GET, 'page' );
+		if ( ! empty( $page ) && 'fkcart' === strval( $page ) ) {
+			return '';
+		}
+
+		return $str;
 	}
 
 	/**

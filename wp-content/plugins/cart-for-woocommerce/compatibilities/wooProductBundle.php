@@ -7,8 +7,7 @@
 namespace FKCart\Compatibilities;
 class WooProductBundle {
 	public function __construct() {
-		add_filter( 'fkcart_cart_item_is_sold_individually', [ $this, 'is_child_product' ], 10, 2 );
-		add_filter( 'fkcart_item_hide_delete_icon', [ $this, 'is_child_product' ], 10, 2 );
+		add_filter( 'fkcart_is_child_item', [ $this, 'is_child_product' ], 10, 2 );
 	}
 
 	public function is_enable() {

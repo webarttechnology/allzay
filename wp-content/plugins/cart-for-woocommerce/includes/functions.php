@@ -219,7 +219,7 @@ if ( ! function_exists( 'fkcart_free_shipping_method' ) ) {
 	 * @return string[]
 	 */
 	function fkcart_free_shipping_method() {
-		return [ 'free_shipping', 'table_rate' ];
+		return [ 'free_shipping', 'table_rate', 'flexible_shipping_single' ];
 	}
 }
 

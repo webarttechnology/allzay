@@ -2,6 +2,7 @@
 
 namespace FKCart\Includes;
 
+
 class Data {
 	private static $db_data = null;
 
@@ -359,7 +360,7 @@ class Data {
 			--fkcart-bg-color: " . self::get_value( 'css_bg_color' ) . ";
 			--fkcart-slider-desktop-width: " . self::get_value( 'css_desktop_width' ) . "px;
 			--fkcart-slider-mobile-width: " . self::get_value( 'css_mobile_width' ) . "%;
-			--fkcart-animation-duration: " . self::get_value( 'css_animation_speed' ) / 1000 . "s;
+			--fkcart-animation-duration: " . absint( self::get_value( 'css_animation_speed' ) ) / 1000 . "s;
 			--fkcart-panel-color:" . self::get_value( 'css_upsell_bg_color' ) . ";
 			--fkcart-color-black: #000000;
 			--fkcart-success-color: #5BA238;
@@ -725,5 +726,24 @@ class Data {
 		}
 
 		return false;
+	}
+
+	/**
+	 * When Rewards sections are not run properly after some action like add,remove,update,delete items then run get slide cart ajax
+	 * Issue with wpml-multicurrency or others plugins.
+	 *
+	 * @return bool
+	 */
+	public static function need_re_run_get_slide_cart_ajax() {
+		return apply_filters( 'fkcart_re_run_get_slide_cart_ajax', false );
+	}
+
+	public static function fkcart_frontend_cookie_names() {
+		$default_names = [ 'quantity' => 'fkcart_cart_qty', 'cart_total' => 'fkcart_cart_total' ];
+		$cookie_names  = apply_filters( 'fkcart_frontend_cookie_names', $default_names );
+		$quantity      = isset( $cookie_names['quantity'] ) && ! empty( $cookie_names['quantity'] ) ? $cookie_names['quantity'] : $default_names['quantity'];
+		$cart_total    = isset( $cookie_names['cart_total'] ) && ! empty( $cookie_names['cart_total'] ) ? $cookie_names['cart_total'] : $default_names['cart_total'];
+
+		return [ 'quantity' => $quantity, 'cart_total' => $cart_total ];
 	}
 }

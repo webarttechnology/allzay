@@ -3,15 +3,15 @@
 namespace FKCart\compatibilities;
 class WPML_Multicurrency {
 	public function __construct() {
-		add_action( 'woocommerce_calculate_totals', [ $this, 'attach_actions' ], 100 );
+		add_filter( 'fkcart_re_run_get_slide_cart_ajax', [ $this, 'need_to_run_get_slide_ajax' ] );
 	}
 
-	public function attach_actions() {
+	public function need_to_run_get_slide_ajax( $status ) {
 		if ( $this->is_enable() && class_exists( 'FKCart\Pro\Rewards' ) ) {
-			remove_action( 'woocommerce_calculate_totals', [ $this, 'attach_actions' ], 100 );
-			$instance = \FKCart\Pro\Rewards::getInstance();
-			$instance->update_reward();
+			$status = true;
 		}
+
+		return $status;
 	}
 
 	public function is_enable() {
@@ -39,18 +39,6 @@ class WPML_Multicurrency {
 		}
 
 		return $woocommerce_wpml->get_multi_currency()->prices->convert_price_amount( $price );
-	}
-
-	function get_fixed_currency_price_reverse( $price, $from = null, $base = null ) {
-		if ( ! class_exists( '\SitePress' ) ) {
-			return $price;
-		}
-		global $woocommerce_wpml;
-		if ( WCML_MULTI_CURRENCIES_INDEPENDENT !== $woocommerce_wpml->settings['enable_multi_currency'] ) {
-			return $price;
-		}
-
-		return $woocommerce_wpml->get_multi_currency()->prices->unconvert_price_amount( $price, $from );
 	}
 }
 

@@ -39,7 +39,7 @@ do_action( 'fkcart_before_checkout_button', $front );
 					echo wp_kses_post( '<div class="fkcart-checkout--price-discounted ' . ( ! $discount_enabled ? "fkcart-hide" : "" ) . '">' . $front->get_discounted_subtotal() . '</div>' );
 					echo wp_kses_post( '<div class="fkcart-checkout--price-normal ' . ( $discount_enabled ? "fkcart-hide" : "" ) . '">' . $front->get_subtotal() . '</div>' );
 				} else {
-					echo wp_kses_post( $front->get_subtotal() );
+					echo wp_kses_post( apply_filters( 'fkcart_checkout_button_total', $front->get_subtotal() ) );
 				}
 				?>
             </div>

@@ -66,11 +66,6 @@ class Aelia {
 		return apply_filters( 'wc_aelia_cs_convert', $price, $from_currency, $to_currency );
 	}
 
-	function get_fixed_currency_price_reverse( $price, $from = null, $base = null ) {
-		$base = ( is_null( $base ) ) ? get_option( 'woocommerce_currency' ) : $base;
-
-		return $this->get_price_in_currency( $price, $base, $from );
-	}
 }
 
 Compatibility::register( new Aelia(), 'aelia_cs' );

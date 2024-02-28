@@ -17,6 +17,7 @@ class Ajax {
 	 */
 	public function __construct() {
 		add_filter( 'woocommerce_add_to_cart_fragments', [ $this, 'get_fragments' ], 99 );;
+		add_action( 'wp', [ $this, 'set_fkcart_cookies' ], 20 );
 		$this->handle_public_ajax();
 	}
 
@@ -95,7 +96,7 @@ class Ajax {
 		$product_id    = isset( $_POST['fkcart_product_id'] ) ? sanitize_text_field( $_POST['fkcart_product_id'] ) : '';
 		$variation_id  = isset( $_POST['fkcart_variation_id'] ) ? sanitize_text_field( $_POST['fkcart_variation_id'] ) : '';
 		$quantity      = isset( $_POST['fkcart_quantity'] ) ? sanitize_text_field( $_POST['fkcart_quantity'] ) : 1;
-		$attributes    = isset( $_POST['attributes'] ) ? wc_clean( $_POST['attributes'] ) : [];
+		$attributes    = isset( $_POST['attributes'] ) ? ( $_POST['attributes'] ) : [];
 		$cart_item_key = isset( $_POST['fkcart-cart-key'] ) ? sanitize_text_field( $_POST['fkcart-cart-key'] ) : '';
 
 		if ( ! empty( $cart_item_key ) ) {
@@ -155,7 +156,7 @@ class Ajax {
 		$product_id    = isset( $_POST['fkcart_product_id'] ) ? sanitize_text_field( $_POST['fkcart_product_id'] ) : '';
 		$variation_id  = isset( $_POST['fkcart_variation_id'] ) ? sanitize_text_field( $_POST['fkcart_variation_id'] ) : '';
 		$quantity      = isset( $_POST['fkcart_quantity'] ) ? sanitize_text_field( $_POST['fkcart_quantity'] ) : 1;
-		$attributes    = isset( $_POST['attributes'] ) ? wc_clean( $_POST['attributes'] ) : [];
+		$attributes    = isset( $_POST['attributes'] ) ? ( $_POST['attributes'] ) : [];
 		$cart_item_key = isset( $_POST['fkcart-cart-key'] ) ? sanitize_text_field( $_POST['fkcart-cart-key'] ) : '';
 
 		if ( empty( $product_id ) || empty( $quantity ) || ! is_numeric( $product_id ) || ! is_numeric( $quantity ) ) {
@@ -410,15 +411,21 @@ class Ajax {
 	public function fragments( $message = '' ) {
 		wc_maybe_define_constant( 'WOOCOMMERCE_CART', true );
 		$this->set_cookie();
-		$fragments                            = [];
-		$fragments['.fkcart-modal-container'] = fkcart_get_active_skin_html();
-		$fragments['.fkcart-mini-toggler']    = fkcart_mini_cart_html();
-		$resp                                 = [
-			'fragments'  => apply_filters( 'fkcart_fragments', $fragments ),
-			'ajax_nonce' => wp_create_nonce( 'fkcart' ),
-			'cart_hash'  => WC()->cart->get_cart_hash(),
-			'code'       => 200,
-			'status'     => true,
+
+
+		$need_re_run_slide_cart = DATA::need_re_run_get_slide_cart_ajax() && ( did_action( 'wc_ajax_fkcart_add_item' ) > 0 || did_action( 'wc_ajax_fkcart_update_item' ) > 0 || did_action( 'wc_ajax_fkcart_remove_item' ) > 0 );
+		$fragments              = [];
+		if ( ! $need_re_run_slide_cart ) {
+			$fragments['.fkcart-modal-container'] = fkcart_get_active_skin_html();
+			$fragments['.fkcart-mini-toggler']    = fkcart_mini_cart_html();
+		}
+		$resp = [
+			'fragments'                => apply_filters( 'fkcart_fragments', $fragments ),
+			'ajax_nonce'               => wp_create_nonce( 'fkcart' ),
+			'fkcart_re_run_slide_cart' => $need_re_run_slide_cart ? 'yes' : 'no',
+			'cart_hash'                => WC()->cart->get_cart_hash(),
+			'code'                     => 200,
+			'status'                   => true,
 		];
 		if ( ! empty( $resp ) ) {
 			$resp['message'] = $message;
@@ -480,16 +487,21 @@ class Ajax {
 		$instance   = Front::get_instance();
 		$cart_count = $instance->get_cart_content_count();
 
-		wc_setcookie( 'fkcart_cart_qty', $cart_count, time() + ( MINUTE_IN_SECONDS * 30 ), false, false );
-		wc_setcookie( 'fkcart_cart_total', $instance->get_subtotal(), time() + ( MINUTE_IN_SECONDS * 30 ), false, false );
+		$cookie_names = Data::fkcart_frontend_cookie_names();
+
+		wc_setcookie( $cookie_names['quantity'], $cart_count, time() + ( MINUTE_IN_SECONDS * 30 ), false, false );
+		wc_setcookie( $cookie_names['cart_total'], $instance->get_subtotal(), time() + ( MINUTE_IN_SECONDS * 30 ), false, false );
 	}
 
 	/**
-	 * Public method to set cookie
+	 * Public method to set cookie at wp hooks sometime quantity mismatch with actual cart quantity
 	 *
 	 * @return void
 	 */
 	public function set_fkcart_cookies() {
+		if ( is_null( WC()->cart ) || headers_sent() ) { // do not set cookie if headers already sent
+			return;
+		}
 		$this->set_cookie();
 	}
 }

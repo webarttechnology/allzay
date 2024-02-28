@@ -41,7 +41,7 @@ class Compatibility {
 			'wpml-multicurrency.php'          => class_exists( '\SitePress' ),
 			'litespeed.php'                   => defined( 'LSCWP_V' ),
 			'klarna.php'                      => class_exists( '\WC_Klarna_Payments' ) && defined( 'WFFN_PRO_FILE' ),
-			'funnelkitcheckout.php'           => class_exists( '\WFACP_Core' ),
+			'funnelkitcheckout.php'           => class_exists( '\WFACP_Core' )
 		];
 
 		self::add_files( $files );
@@ -58,6 +58,8 @@ class Compatibility {
 			'shoptimizer.php'             => function_exists( 'shoptimizer_header_cart' ),
 			'smartcoupons.php'            => class_exists( '\WC_Smart_Coupons' ),
 			'allproductsubscriptions.php' => class_exists( 'WCS_ATT_Cart' ),
+			'pricebasedcountry.php'       => function_exists( '\wcpbc' ),
+			'flexibleshipping.php'        => defined( 'FLEXIBLE_SHIPPING_VERSION' )
 		];
 
 		self::add_files( $files );
@@ -118,17 +120,4 @@ class Compatibility {
 		return $price;
 	}
 
-	public static function get_fixed_currency_price_reverse( $price, $from = null, $to = null ) {
-		if ( empty( self::$plugin_compatibilities ) ) {
-			return $price;
-		}
-
-		foreach ( self::$plugin_compatibilities as $plugins_class ) {
-			if ( method_exists( $plugins_class, 'is_enable' ) && $plugins_class->is_enable() && is_callable( array( $plugins_class, 'get_fixed_currency_price_reverse' ) ) ) {
-				return call_user_func( array( $plugins_class, 'get_fixed_currency_price_reverse' ), $price, $from, $to );
-			}
-		}
-
-		return $price;
-	}
 }

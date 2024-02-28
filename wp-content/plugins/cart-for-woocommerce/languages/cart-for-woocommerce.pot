@@ -1,36 +1,41 @@
-# Copyright (C) 2023 FunnelKit
+# Copyright (C) 2024 FunnelKit
 # This file is distributed under the GPLv3 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: FunnelKit Cart for WooCommerce 1.4.0\n"
+"Project-Id-Version: FunnelKit Cart for WooCommerce 1.5.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/cart-for-woocommerce\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-12-22T19:53:14+00:00\n"
+"POT-Creation-Date: 2024-02-24T10:22:18+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.7.1\n"
+"X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: cart-for-woocommerce\n"
 
 #. Plugin Name of the plugin
+#: plugin.php
 msgid "FunnelKit Cart for WooCommerce"
 msgstr ""
 
 #. Plugin URI of the plugin
+#: plugin.php
 msgid "https://funnelkit.com/funnelkit-cart/"
 msgstr ""
 
 #. Description of the plugin
+#: plugin.php
 msgid "Add a beautiful sliding cart to your WooCommerce site. Let the buyers edit items, add upsells on sliding cart and skip to checkout."
 msgstr ""
 
 #. Author of the plugin
+#: plugin.php
 msgid "FunnelKit"
 msgstr ""
 
 #. Author URI of the plugin
+#: plugin.php
 msgid "https://funnelkit.com"
 msgstr ""
 
@@ -151,99 +156,99 @@ msgstr ""
 msgid "Preferences Updated"
 msgstr ""
 
-#: includes/ajax.php:119
-#: includes/ajax.php:168
-#: includes/ajax.php:215
-#: includes/ajax.php:278
-#: includes/ajax.php:304
-#: includes/ajax.php:339
+#: includes/ajax.php:120
+#: includes/ajax.php:169
+#: includes/ajax.php:216
+#: includes/ajax.php:279
+#: includes/ajax.php:305
+#: includes/ajax.php:340
 msgid "Cart not defined"
 msgstr ""
 
-#: includes/ajax.php:134
+#: includes/ajax.php:135
 msgid "\"%s\" has been added to the cart."
 msgstr ""
 
-#: includes/ajax.php:139
+#: includes/ajax.php:140
 msgid "Unable to add \"%s\" to the cart"
 msgstr ""
 
-#: includes/ajax.php:220
-#: includes/ajax.php:274
-#: includes/ajax.php:283
+#: includes/ajax.php:221
+#: includes/ajax.php:275
+#: includes/ajax.php:284
 msgid "Cart item not found"
 msgstr ""
 
-#: includes/ajax.php:241
+#: includes/ajax.php:242
 msgid "Sorry, you can not add more then %s of \"%s\". Please edit your cart and try again."
 msgstr ""
 
-#: includes/ajax.php:247
+#: includes/ajax.php:248
 msgid "\"%s\" has been updated."
 msgstr ""
 
-#: includes/ajax.php:261
+#: includes/ajax.php:262
 msgid "Some error occurred in updating the \"%s\""
 msgstr ""
 
-#: includes/ajax.php:292
+#: includes/ajax.php:293
 msgid "\"%s\" is removed"
 msgstr ""
 
-#: includes/ajax.php:438
+#: includes/ajax.php:445
 msgid "Security check failed"
 msgstr ""
 
-#: includes/ajax.php:469
+#: includes/ajax.php:476
 msgid "Required data missing"
 msgstr ""
 
-#: includes/data.php:48
+#: includes/data.php:49
 msgid "Review Your Cart"
 msgstr ""
 
-#: includes/data.php:53
+#: includes/data.php:54
 msgid "Coupon Code"
 msgstr ""
 
-#: includes/data.php:54
+#: includes/data.php:55
 msgid "Got a discount code?"
 msgstr ""
 
-#: includes/data.php:55
+#: includes/data.php:56
 msgid "Apply"
 msgstr ""
 
-#: includes/data.php:59
+#: includes/data.php:60
 msgid "Save {{saving_percentage}}"
 msgstr ""
 
-#: includes/data.php:60
+#: includes/data.php:61
 #: templates/cart/order-summary.php:15
 msgid "Shipping & taxes may be re-calculated at checkout"
 msgstr ""
 
-#: includes/data.php:65
+#: includes/data.php:66
 msgid "Continue Shopping"
 msgstr ""
 
-#: includes/data.php:67
+#: includes/data.php:68
 msgid "Your Cart is Empty"
 msgstr ""
 
-#: includes/data.php:68
+#: includes/data.php:69
 msgid "Fill your cart with amazing items"
 msgstr ""
 
-#: includes/data.php:69
+#: includes/data.php:70
 msgid "Shop Now"
 msgstr ""
 
-#: includes/data.php:75
+#: includes/data.php:76
 msgid "Frequently Bought Together"
 msgstr ""
 
-#: includes/data.php:79
+#: includes/data.php:80
 msgid "Congrats! You have unlocked all the rewards."
 msgstr ""
 
@@ -261,7 +266,7 @@ msgid "Upgrade to Pro Now"
 msgstr ""
 
 #: admin/app/dist/main.js:1
-msgid "Setup and Help"
+msgid "Back"
 msgstr ""
 
 #: admin/app/dist/main.js:1
@@ -418,6 +423,10 @@ msgstr ""
 
 #: admin/app/dist/main.js:1
 msgid "Show the cart total on the CTA button."
+msgstr ""
+
+#: admin/app/dist/main.js:1
+msgid "Checkout Button Text"
 msgstr ""
 
 #: admin/app/dist/main.js:1
@@ -605,6 +614,32 @@ msgid "Add Language"
 msgstr ""
 
 #: admin/app/dist/main.js:1
+msgid "Remove %s"
+msgstr ""
+
+#: admin/app/dist/main.js:1
+msgid "%1$s (%2$s of %3$s)"
+msgstr ""
+
+#: admin/app/dist/main.js:1
+msgid "Clear all"
+msgstr ""
+
+#: admin/app/dist/main.js:1
+msgid "Move backward for selected items"
+msgstr ""
+
+#: admin/app/dist/main.js:1
+msgid "%d result found, use up and down arrow keys to navigate."
+msgid_plural "%d results found, use up and down arrow keys to navigate."
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/app/dist/main.js:1
+msgid "No results."
+msgstr ""
+
+#: admin/app/dist/main.js:1
 msgid "Search by coupon"
 msgstr ""
 
@@ -757,6 +792,30 @@ msgid "Add Cross Sell"
 msgstr ""
 
 #: admin/app/dist/main.js:1
+msgid "Products & Upsells"
+msgstr ""
+
+#: admin/app/dist/main.js:1
+msgid "Page %d of %d"
+msgstr ""
+
+#: admin/app/dist/main.js:1
+msgid "Previous Page"
+msgstr ""
+
+#: admin/app/dist/main.js:1
+msgid "Next Page"
+msgstr ""
+
+#: admin/app/dist/main.js:1
+msgid "Go to page"
+msgstr ""
+
+#: admin/app/dist/main.js:1
+msgid "Rows per page"
+msgstr ""
+
+#: admin/app/dist/main.js:1
 msgid "No products to show"
 msgstr ""
 
@@ -842,10 +901,6 @@ msgstr ""
 
 #: admin/app/dist/main.js:1
 msgid "View All Products"
-msgstr ""
-
-#: admin/app/dist/main.js:1
-msgid "Products & Upsells"
 msgstr ""
 
 #: admin/app/dist/main.js:1
@@ -993,6 +1048,78 @@ msgid "Quick and easy setup"
 msgstr ""
 
 #: admin/app/dist/main.js:1
+msgid "Successfully Activated"
+msgstr ""
+
+#: admin/app/dist/main.js:1
+msgid "Use Express Checkout to Make Buyers Checkout 1.5x Faster!"
+msgstr ""
+
+#: admin/app/dist/main.js:1
+msgid "Now you are one step away to connect your gateways"
+msgstr ""
+
+#: admin/app/dist/main.js:1
+msgid "Add express payment options such as Apple Pay & Google Pay via Stripe. Start quick 2 min onboarding."
+msgstr ""
+
+#: admin/app/dist/main.js:1
+msgid "Connect with "
+msgstr ""
+
+#: admin/app/dist/main.js:1
+msgid "Activating"
+msgstr ""
+
+#: admin/app/dist/main.js:1
+msgid "Activate Express Checkout"
+msgstr ""
+
+#: admin/app/dist/main.js:1
+msgid "Express Checkout"
+msgstr ""
+
+#: admin/app/dist/main.js:1
+msgid "To access Express Checkout feature, update "
+msgstr ""
+
+#: admin/app/dist/main.js:1
+msgid " by FunnelKit to at-least version "
+msgstr ""
+
+#: admin/app/dist/main.js:1
+msgid " or higher."
+msgstr ""
+
+#: admin/app/dist/main.js:1
+msgid "Update Now"
+msgstr ""
+
+#: admin/app/dist/main.js:1
+msgid "Enable Express Checkout on Cart"
+msgstr ""
+
+#: admin/app/dist/main.js:1
+msgid "Apple Pay and Google Pay visibility depends on browser and wallet configuration of the user in that browser."
+msgstr ""
+
+#: admin/app/dist/main.js:1
+msgid "Test visibility"
+msgstr ""
+
+#: admin/app/dist/main.js:1
+msgid "Apple Pay and Google Pay are not activate in Gateway. Enable them to show them on cart."
+msgstr ""
+
+#: admin/app/dist/main.js:1
+msgid "Get FunnelKit Pro"
+msgstr ""
+
+#: admin/app/dist/main.js:1
+msgid "Dismiss"
+msgstr ""
+
+#: admin/app/dist/main.js:1
 msgid "Cart"
 msgstr ""
 
@@ -1061,15 +1188,51 @@ msgid "Activate"
 msgstr ""
 
 #: admin/app/dist/main.js:1
-msgid "Activating..."
+msgid "Activating…"
 msgstr ""
 
 #: admin/app/dist/main.js:1
-msgid "Something went wrong, please try again."
+msgid "All"
 msgstr ""
 
 #: admin/app/dist/main.js:1
 msgid "Checkout"
+msgstr ""
+
+#: admin/app/dist/main.js:1
+msgid "Sales Funnels"
+msgstr ""
+
+#: admin/app/dist/main.js:1
+msgid "Lead Funnels"
+msgstr ""
+
+#: admin/app/dist/main.js:1
+msgid "Sales Page"
+msgstr ""
+
+#: admin/app/dist/main.js:1
+msgid "Checkout Page"
+msgstr ""
+
+#: admin/app/dist/main.js:1
+msgid "One Click Upsell"
+msgstr ""
+
+#: admin/app/dist/main.js:1
+msgid "Thank You Page"
+msgstr ""
+
+#: admin/app/dist/main.js:1
+msgid "Optin Page"
+msgstr ""
+
+#: admin/app/dist/main.js:1
+msgid "Optin Confirmation Page"
+msgstr ""
+
+#: admin/app/dist/main.js:1
+msgid "Something went wrong, please try again."
 msgstr ""
 
 #: admin/app/dist/main.js:1
@@ -1102,10 +1265,6 @@ msgstr ""
 
 #: admin/app/dist/main.js:1
 msgid "Ready to use templates that provide frictionless checkout experience to your customers."
-msgstr ""
-
-#: admin/app/dist/main.js:1
-msgid "Activating…"
 msgstr ""
 
 #: admin/app/dist/main.js:1
