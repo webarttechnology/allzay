@@ -287,14 +287,7 @@ $attachment_ids = $product->get_gallery_image_ids();
                               <?php 
                                }
                            }
-                           else
-                           {
-                            ?>
-                              <div class="cartdiv"> <a href="<?php echo get_the_permalink(); ?>"><strong>Select options</strong></a></div>
-                            <?php 
-                           }
-
-                                ?>
+                          ?>
                             </div>
                             <div class="view-and-favorite-area">
                                 <ul>
@@ -319,8 +312,11 @@ $attachment_ids = $product->get_gallery_image_ids();
                             </p>
                              <?php      if(($regularprice) ||($saleprice) ){ ?>
                             <p class="price">$<?php echo $saleprice;  ?> <del>$ <?php echo $regularprice; ?></del></p>
-                        <?php } ?>
+                        <?php }
+                        else{
+                         ?>
                          <div class="cartdiv"> <a href="<?php echo get_the_permalink(); ?>"><strong>Select options</strong></a></div>
+                     <?php } ?>
                             <div class="rating">
                                 <ul>
                                    <?php for($i=1;$i<=$rating;$i++)
@@ -509,12 +505,7 @@ $attachment_ids = $product->get_gallery_image_ids();
                                   <?php 
                                    }
                                }
-                               else
-                               {
-                                ?>
-                                <div class="cartdiv"> <a href="<?php echo get_the_permalink(); ?>"><strong>Select options</strong></a></div>
-                                <?php 
-                               }
+                              
 
                                     ?>
 
@@ -533,8 +524,11 @@ $attachment_ids = $product->get_gallery_image_ids();
                                                <?php      if(($regularprice) ||($saleprice) ){ ?>
 
                                             <p class="price">$<?php echo $saleprice; ?> <del>$<?php echo $regularprice; ?></del></p>
+                                        <?php }
+                                        else{
+                                         ?>
+                                            <div class="cartdiv"> <a href="<?php echo get_the_permalink(); ?>"><strong>Select options</strong></a></div>
                                         <?php } ?>
-
                                             <div class="rating">
                                                 <ul>
                                                      <?php for($i=1;$i<=$rating;$i++)
@@ -666,12 +660,7 @@ $attachment_ids = $product->get_gallery_image_ids();
                                   <?php 
                                    }
                                }
-                               else
-                               {
-                                ?>
-                              <div class="cartdiv"> <a href="<?php echo get_the_permalink(); ?>"><strong>Select options</strong></a></div>
-                                <?php 
-                               }
+                              
 
                                     ?>
 
@@ -690,7 +679,12 @@ $attachment_ids = $product->get_gallery_image_ids();
                                                <?php      if(($regularprice) ||($saleprice) ){ ?>
 
                                             <p class="price">$<?php echo $saleprice; ?> <del>$<?php echo $regularprice; ?></del></p>
-                                        <?php } ?>
+                                        <?php }
+                                        else{
+
+                                         ?>
+                                         <div class="cartdiv"> <a href="<?php echo get_the_permalink(); ?>"><strong>Select options</strong></a></div>
+                                     <?php } ?>
                                             <div class="rating">
                                                 <ul>
                                                      <?php for($i=1;$i<=$rating;$i++)
@@ -819,13 +813,7 @@ $attachment_ids = $product->get_gallery_image_ids();
                                   <?php 
                                    }
                                }
-                               else
-                               {
-                                ?>
-                                <div class="cartdiv"> <a href="<?php echo get_the_permalink(); ?>"><strong>Select options</strong></a></div>
-                                <?php
-                               }
-
+                              
                                     ?>
 
 
@@ -843,7 +831,12 @@ $attachment_ids = $product->get_gallery_image_ids();
                                       <?php      if(($regularprice) ||($saleprice) ){ ?>
 
                                             <p class="price">$<?php echo $saleprice; ?> <del>$<?php echo $regularprice; ?></del></p>
-                                        <?php } ?>
+                                        <?php }
+                                        else{
+                                         ?>
+                                      
+                                     <div class="cartdiv"> <a href="<?php echo get_the_permalink(); ?>"><strong>Select options</strong></a></div>   
+                                 <?php } ?>
                                             <div class="rating">
                                                 <ul>
                                                      <?php for($i=1;$i<=$rating;$i++)
@@ -1009,12 +1002,7 @@ if(($regularprice) ||($saleprice) ){
                                   <?php 
                                    }
                                }
-                               else
-                               {
-                                ?>
-                                <div class="cartdiv"> <a href="<?php echo get_the_permalink(); ?>"><strong>Select options</strong></a></div>
-                                <?php 
-                               }
+                               
 
                                     ?>
                                         </div>
@@ -1043,7 +1031,11 @@ if(($regularprice) ||($saleprice) ){
 
                                             <p class="price">$<?php echo $saleprice; ?> <del>$<?php echo $regularprice; ?></del></p>
                                         <?php
-                                         } ?>
+                                         }
+                                         else{
+                                          ?>
+                                         <div class="cartdiv"> <a href="<?php echo get_the_permalink(); ?>"><strong>Select options</strong></a></div> 
+                                         <?php } ?>  
                                             <div class="rating">
                                                 <ul>
                                                      <?php for($i=1;$i<=$rating;$i++)
@@ -1274,12 +1266,7 @@ $attachment_ids = $product->get_gallery_image_ids();
                                   <?php 
                                    }
                            }
-                         else
-                            {
-                            ?>
-                         <div class="cartdiv"> <a href="<?php echo get_the_permalink(); ?>"><strong>Select options</strong></a></div>
-                    <?php 
-                               }
+                        
                                     ?>
                                             </div>
                                         </div>
@@ -1299,7 +1286,12 @@ $attachment_ids = $product->get_gallery_image_ids();
                                              {
                                         ?>
                                             <p class="price">$<?php echo $saleprice; ?> <del>$<?php echo $regularprice; ?></del></p>
-                                        <?php   } ?>
+                                        <?php   }
+                                        else{
+
+                                         ?>
+                           <div class="cartdiv"> <a href="<?php echo get_the_permalink($eachspecialoffer); ?>"><strong>Select options</strong></a></div>  
+                                        <?php } ?> 
                                             <div class="rating">
                                                 
                                                      <ul>
