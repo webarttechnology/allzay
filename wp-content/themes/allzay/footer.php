@@ -131,6 +131,7 @@
 
     <!-- <script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script> -->
     <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/jquery-3.6.0.min.js"></script>
+      <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/main.js"></script>
 
     <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/popper.min.js"></script>
     <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/jquery.nice-select.min.js"></script>
@@ -142,7 +143,7 @@
     <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/swiper-bundle.min.js"></script>
     <!-- <script src="assets/js/waypoints.min.js"></script> -->
 
-    <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/main.js"></script>
+  
     <?php wp_footer(); ?>
 </body>
 

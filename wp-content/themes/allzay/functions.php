@@ -956,7 +956,7 @@ add_filter('post_class', function($classes, $class, $product_id) {
 
 
 
-add_filter( 'woocommerce_get_price_html', 'bbloomer_hide_price_addcart_not_logged_in', 9999, 2 );
+/*add_filter( 'woocommerce_get_price_html', 'bbloomer_hide_price_addcart_not_logged_in', 9999, 2 );
  
 function bbloomer_hide_price_addcart_not_logged_in( $price, $product ) {
    if ( ! is_user_logged_in() ) { 
@@ -966,7 +966,7 @@ function bbloomer_hide_price_addcart_not_logged_in( $price, $product ) {
       add_filter( 'woocommerce_is_purchasable', '__return_false' );
    }
    return $price;
-}
+}*/
 
 
 add_filter('gettext', 'change_ymal');
