@@ -1,5 +1,10 @@
 
-<?php $pageid = get_id_by_slug('site-general-settings');  ?>
+<?php 
+    global $post;
+    $post_slug = $post->post_name;
+    //die($post_slug);
+
+$pageid = get_id_by_slug('site-general-settings');  ?>
 
 <div class="gift-section">
     <img src="<?php echo get_field('gift_card_first_image',$pageid); ?>" alt class="gift-img1">
@@ -129,18 +134,20 @@
     </footer>
 
 
-    <!-- <script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script> -->
+   
     <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/jquery-3.6.0.min.js"></script>
-      <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/main.js"></script>
+    <?php if( is_front_page() ||($post_slug=='about-us')){ ?>
+     
+    <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/popper.min.js"></script> 
+    <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/jquery.nice-select.min.js"></script> 
+   <?php } ?>
+    
+     
+    <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/bootstrap.min.js"></script> 
+    <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/slick.js"></script> 
 
-    <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/popper.min.js"></script>
-    <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/jquery.nice-select.min.js"></script>
-
-    <!-- <script src="assets/js/jquery.fancybox.min.js"></script> -->
-    <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/bootstrap.min.js"></script>
-    <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/slick.js"></script>
-
-    <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/swiper-bundle.min.js"></script>
+    <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/swiper-bundle.min.js"></script> 
+     <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/main.js"></script>
     <!-- <script src="assets/js/waypoints.min.js"></script> -->
 
   
