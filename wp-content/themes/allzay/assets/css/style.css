@@ -3718,3 +3718,6 @@ header.style-2 .nav-right::after { display: none; }
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,border-radius .15s ease;
 }
 
+.woocommerce div.product form.cart .variations select{
+  display: inline-block !important;
+}

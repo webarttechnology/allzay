@@ -239,4 +239,4 @@ do_action( 'woocommerce_after_main_content' );
 </section>
 <?php
 
-get_footer( 'shop' );
+get_footer();

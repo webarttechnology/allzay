@@ -145,4 +145,4 @@ $faqcount = 0;
 </div>
 
 
-<?php get_footer(); ?>
+ <?php get_footer(); 

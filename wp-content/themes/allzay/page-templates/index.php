@@ -1469,4 +1469,4 @@ $attachment_ids = $product->get_gallery_image_ids();
 
 
   
-<?php get_footer(); 
+<?php get_footer('homeabout'); 

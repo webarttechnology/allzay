@@ -136,13 +136,11 @@ $pageid = get_id_by_slug('site-general-settings');  ?>
 
    
     <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/jquery-3.6.0.min.js"></script>
-    <?php if( is_front_page() ||($post_slug=='about-us')){ ?>
-     
+  
     <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/popper.min.js"></script> 
     <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/jquery.nice-select.min.js"></script> 
-   <?php } ?>
-    
-     
+
+       
     <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/bootstrap.min.js"></script> 
     <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/slick.js"></script> 
 

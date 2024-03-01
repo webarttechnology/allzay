@@ -173,4 +173,4 @@ while(have_posts()):the_post();
 </div>
 </div>
 
-<?php get_footer(); ?>
+ <?php get_footer(); 

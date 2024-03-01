@@ -83,4 +83,4 @@ $pageid = get_id_by_slug('site-general-settings');
 <?php
 endwhile;
 
- get_footer(); ?>
+ get_footer(); 
