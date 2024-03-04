@@ -277,7 +277,7 @@ $attachment_ids = $product->get_gallery_image_ids();
                                if(is_user_logged_in())
                                    { ?>
 
-                                   <div class="cartdiv"><a href="javascript:void(0)" class="add-to-cart-button btn btn-outline-dark" data-toggle="tooltip" data-placement="left" data-product_id="<?php echo get_the_ID();  ?>" data-quantity="<?php echo "1"; ?>" class="fa-solid fa-cart-shopping" aria-label="Search" data-bs-original-title="Search"><i class="bi bi-cart"></i> Add to cart</a></div>
+                                   <div class="cartdiv"><a href="javascript:void(0)" class="add-to-cart-button btn btn-warning text-dark" data-toggle="tooltip" data-placement="left" data-product_id="<?php echo get_the_ID();  ?>" data-quantity="<?php echo "1"; ?>" class="fa-solid fa-cart-shopping" aria-label="Search" data-bs-original-title="Search"><i class="bi bi-cart"></i> Add to cart</a></div>
                                <?php }
                                else
                                {
@@ -494,7 +494,7 @@ $attachment_ids = $product->get_gallery_image_ids();
                               if(is_user_logged_in())
                                    { ?>
 
-                                   <div class="cartdiv"><a href="javascript:void(0)" class="add-to-cart-button btn btn-outline-dark" data-toggle="tooltip" data-placement="left" data-product_id="<?php echo get_the_ID();  ?>" data-quantity="<?php echo "1"; ?>" class="fa-solid fa-cart-shopping" aria-label="Search" data-bs-original-title="Search"><i class="bi bi-cart"></i> Add to cart</a></div>
+                                   <div class="cartdiv"><a href="javascript:void(0)" class="add-to-cart-button btn btn-warning text-dark" data-toggle="tooltip" data-placement="left" data-product_id="<?php echo get_the_ID();  ?>" data-quantity="<?php echo "1"; ?>" class="fa-solid fa-cart-shopping" aria-label="Search" data-bs-original-title="Search"><i class="bi bi-cart"></i> Add to cart</a></div>
                                <?php 
                                    }
                                    else
@@ -649,7 +649,7 @@ $attachment_ids = $product->get_gallery_image_ids();
                               if(is_user_logged_in())
                                    { ?>
 
-                                   <div class="cartdiv"><a href="javascript:void(0)" class="add-to-cart-button btn btn-outline-dark" data-toggle="tooltip" data-placement="left" data-product_id="<?php echo get_the_ID();  ?>" data-quantity="<?php echo "1"; ?>" class="fa-solid fa-cart-shopping" aria-label="Search" data-bs-original-title="Search"><i class="bi bi-cart"></i> Add to cart</a></div>
+                                   <div class="cartdiv"><a href="javascript:void(0)" class="add-to-cart-button btn btn-warning text-dark" data-toggle="tooltip" data-placement="left" data-product_id="<?php echo get_the_ID();  ?>" data-quantity="<?php echo "1"; ?>" class="fa-solid fa-cart-shopping" aria-label="Search" data-bs-original-title="Search"><i class="bi bi-cart"></i> Add to cart</a></div>
                                <?php 
                                    }
                                    else
@@ -802,7 +802,7 @@ $attachment_ids = $product->get_gallery_image_ids();
                                if(is_user_logged_in())
                                    { ?>
 
-                                   <div class="cartdiv"><a href="javascript:void(0)" class="add-to-cart-button btn btn-outline-dark" data-toggle="tooltip" data-placement="left" data-product_id="<?php echo get_the_ID();  ?>" data-quantity="<?php echo "1"; ?>" class="fa-solid fa-cart-shopping" aria-label="Search" data-bs-original-title="Search"><i class="bi bi-cart"></i> Add to cart</a></div>
+                                   <div class="cartdiv"><a href="javascript:void(0)" class="add-to-cart-button btn btn-warning text-dark" data-toggle="tooltip" data-placement="left" data-product_id="<?php echo get_the_ID();  ?>" data-quantity="<?php echo "1"; ?>" class="fa-solid fa-cart-shopping" aria-label="Search" data-bs-original-title="Search"><i class="bi bi-cart"></i> Add to cart</a></div>
                                <?php 
                                    }
                                    else
@@ -991,7 +991,7 @@ if(($regularprice) ||($saleprice) ){
                                              if(is_user_logged_in())
                                    { ?>
 
-                                   <div class="cartdiv"><a href="javascript:void(0)" class="add-to-cart-button btn btn-outline-dark" data-toggle="tooltip" data-placement="left" data-product_id="<?php echo get_the_ID();  ?>" data-quantity="<?php echo "1"; ?>" class="fa-solid fa-cart-shopping" aria-label="Search" data-bs-original-title="Search"><i class="bi bi-cart"></i> Add to cart</a></div>
+                                   <div class="cartdiv"><a href="javascript:void(0)" class="add-to-cart-button btn btn-warning text-dark" data-toggle="tooltip" data-placement="left" data-product_id="<?php echo get_the_ID();  ?>" data-quantity="<?php echo "1"; ?>" class="fa-solid fa-cart-shopping" aria-label="Search" data-bs-original-title="Search"><i class="bi bi-cart"></i> Add to cart</a></div>
                                <?php 
                                    }
                                    else
@@ -1255,7 +1255,7 @@ $attachment_ids = $product->get_gallery_image_ids();
                                     if(is_user_logged_in())
                                    { ?>
 
-                                   <div class="cartdiv"><a href="javascript:void(0)" class="add-to-cart-button btn btn-outline-dark" data-toggle="tooltip" data-placement="left" data-product_id="<?php echo $eachspecialoffer;  ?>" data-quantity="<?php echo "1"; ?>" class="fa-solid fa-cart-shopping" aria-label="Search" data-bs-original-title="Search"><i class="bi bi-cart"></i> Add to cart</a></div>
+                                   <div class="cartdiv"><a href="javascript:void(0)" class="add-to-cart-button btn btn-warning text-dark" data-toggle="tooltip" data-placement="left" data-product_id="<?php echo $eachspecialoffer;  ?>" data-quantity="<?php echo "1"; ?>" class="fa-solid fa-cart-shopping" aria-label="Search" data-bs-original-title="Search"><i class="bi bi-cart"></i> Add to cart</a></div>
                                <?php 
                                    }
                                    else
@@ -1469,4 +1469,4 @@ $attachment_ids = $product->get_gallery_image_ids();
 
 
   
-<?php get_footer('homeabout'); 
+<?php get_footer(); 

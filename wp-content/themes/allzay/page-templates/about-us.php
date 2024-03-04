@@ -118,7 +118,7 @@ get_header();
                     <div class="col-lg-6">
                         <div class="makeup-content">
                            <?php echo get_field('about_bestseller_first_text'); ?>
-          <a href="<?php echo get_site_url(); ?>/shop" class="primary-btn1 style-2 hover-btn3"><?php echo get_field('about_bestseller_first_shop'); ?></a>
+      <a href="<?php echo get_site_url(); ?>/shop" class="primary-btn1 style-2 hover-btn3"><?php echo get_field('about_bestseller_first_shop'); ?></a>
                         </div>
                     </div>
                 </div>
